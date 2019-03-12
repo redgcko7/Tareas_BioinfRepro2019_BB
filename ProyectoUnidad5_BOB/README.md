@@ -12,10 +12,10 @@ Data for this project was taken from the [zenodo](https://zenodo.org/record/8855
 
 ## Analyses Run
 ### Admixture Plots
-The program Admixture is useful for identifying and visualizing distinct populations within a species or group of closely related species. The ideal population size (k) is assigned a posteriori based on maximum likelihood estimations of individual ancestries.
+The program **Admixture** is useful for identifying and visualizing distinct populations within a species or group of closely related species. The ideal population size (k) is assigned a posteriori based on maximum likelihood estimations of individual ancestries.
 
 ### PCA plots
-Principal Component Analyses (PCAs) are another tool to detect genetic variation within a species/population. I will use the program SNPRelate to calcuate principal components of the different clades and will graph them in R.
+Principal Component Analyses (PCAs) are another tool to detect genetic variation within a species/population. I will use the program **SNPRelate** to calcuate principal components of the different clades and will graph them in R.
 
 ### Phylogenetic Tree Reconstruction
-Relationships among individuals and clades can be determined by estimating a phylogenetic tree. I will use the program RAxML to contruct a phylogenetic tree using Maximum Likelihood methods, with non-parametric bootstrapping to determine nodal support values. Trees will be edited using the R package ggplot. 
+Relationships among individuals and clades can be determined by estimating a phylogenetic tree. I will use the program **RAxML** to contruct a phylogenetic tree using Maximum Likelihood methods, with non-parametric bootstrapping to determine nodal support values. Trees will be edited using the R package **ggplot**. 
