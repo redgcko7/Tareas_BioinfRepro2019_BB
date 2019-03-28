@@ -30,10 +30,8 @@ cd DATA
 for K in 1 2 3 4 5 6 7 8 9;
 do admixture --cv 80missingdata.singleSNP.bed $K | tee log${K}.out; done
 
-# to view CV errors:
+# view CV errors, lowest CV error is most likely K value
 grep -h CV log*.out >> Admixture.CVerrors.txt
-# lowest CV error is most likely K value
 
-# to plot:
-tbl=read.table("try1/80.7.Q")
-barplot(t(as.matrix(tbl)), col=rainbow(7), xlab="Individual #", ylab = "Ancestry", border=NA)
+# plot using R script (structure_panel.R):
+Rscript admixture_panel_plot.R
