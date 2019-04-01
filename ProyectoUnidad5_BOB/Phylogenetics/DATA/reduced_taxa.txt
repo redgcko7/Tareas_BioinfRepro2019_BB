@@ -1,0 +1,13 @@
+ID	clade	region
+29205	green	E
+37100	green	E
+35061	orange	NE
+37199	orange	NE
+121279	red	NW
+32987	red	NW
+32945	red	NW
+MVZ148937	red	NW
+121020	blue	W
+35076	blue	W
+37110	purple	SW
+121029	purple	SW

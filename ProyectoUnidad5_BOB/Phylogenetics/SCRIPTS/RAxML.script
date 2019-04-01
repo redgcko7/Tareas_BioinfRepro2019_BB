@@ -1,0 +1,51 @@
+ #!/bin/bash
+
+### RAxML script
+
+# This script takes a reduced dataset (see README for justification) from the original phylip file provided by McCartney-Melsted et al. (2018)
+# and runs a maximum likelihood phylogenetic analysis with rapid bootstrapping in RAxML to determine the relationship
+# of the major lineages within the population dataset. An R-script for the visualization of this tree using ape and phytools is included at the end.
+
+# set working directory to Phylogenetics/DATA
+
+cd ../DATA
+
+# The RAxML executable must be downloaded and in the Phylogenetics/DATA directory (https://github.com/stamatak/standard-RAxML)
+
+#
+# unzip .phy file
+#
+unzip 50missing.phy.zip
+
+#
+# create a new phylip file with first line indicating number of sequences and number of sites per sequence
+#
+echo "11 2435662" > 50missing_reduced.phy
+
+#
+# use a loop to write the 11 sequences of the reduced dataset to the 50missing_reduced phylip file
+# may take a few minutes
+#
+for i in 29205 35061 37199 121279 32987 32945 MVZ148937 121020 35076 37110 121029; do
+	grep $i 50missing.phy >> 50missing_reduced.phy
+	done
+
+#
+# run RAxML on reduced dataset, can fiddle with the settings after consulting the manual
+	# '-f a' flag specifies simultaneous rapid boots analysis and best tree search in single run
+	# '-m GTRGAMMA' flag sets model of evolution to GTR + Gamma
+	# '-#' flag sets number of rapid bootstrap repetitions
+	# '-p' flag specifies random starting seed for parsimony inference
+	# '-x' flag specifies random seed number for rapid bootstrap analysis
+	# '-s' flag specifies for input phylip file name
+	# '-n' flag sets output file name
+# will take ~20 minutes to run with these settings
+#
+
+./raxmlHPC -f a -m GTRGAMMA -# 100 -p 53524 -x 52513 -s 50missing_reduced.phy -n 50missing_reduced
+
+#
+# Run Tree_visualization.R script to plot tree with midpoint rooting and tips colored by
+# clades recovered in original publication (McCartney-Melsted et al. 2018)
+#
+Rscript ../SCRIPTS/Tree_visualization.R 
