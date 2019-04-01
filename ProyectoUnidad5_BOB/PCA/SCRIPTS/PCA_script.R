@@ -2,7 +2,7 @@
 
 # set working directory to "PCA" directory
 
-## download SNPRelate if needed (remove #'s if needed)
+## download SNPRelate if needed (remove #'s)
 # if (!requireNamespace("BiocManager", quietly = TRUE))
 #  install.packages("BiocManager")
 # BiocManager::install("gdsfmt")
@@ -23,9 +23,11 @@ snpgdsSummary("DATA/80.gds")
 genofile <- snpgdsOpen("DATA/80.gds")
 RV <- snpgdsPCA(genofile)
 
+pc.percent<-RV$varprop*100
+
 ##  plot PCAs in 2x2 panel
 # create pdf file in FIGURES folder
-pdf("/FIGURES/PCA_panel.pdf")
+pdf("FIGURES/PCA_panel.pdf")
 
 # specify 2x2 panel for a total of 4 PCAs
 par(mfrow=c(2,2))
@@ -47,6 +49,8 @@ plot(RV$eigenvect[,5], RV$eigenvect[,6], xlab=(paste0("PC 5: ", round(pc.percent
 # plot PC 7 vs. PC 8 with PC percents in labels
 plot(RV$eigenvect[,7], RV$eigenvect[,8], xlab=(paste0("PC 7: ", round(pc.percent,2)[7],"%")),
      ylab=(paste0("PC 8: ", round(pc.percent,2)[8],"%")), pch=19)
+
+# save graphs to pdf 'PCA_panel.pdf'
 dev.off()
 
 # close the file
