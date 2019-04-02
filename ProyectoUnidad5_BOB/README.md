@@ -12,19 +12,19 @@ Data for this project was taken from the [zenodo](https://zenodo.org/record/8855
 
 ## Analyses Run
 ### Admixture Plots
-The program [**Admixture**] (http://software.genetics.ucla.edu/admixture/index.html) v.1.3 (Alexander et al. 2009) is used for identifying and visualizing distinct populations within a species or group of closely related species. The ideal population size (k) is assigned a posteriori based on maximum likelihood estimations of individual ancestries.
+The program [Admixture] (http://software.genetics.ucla.edu/admixture/index.html) v.1.3 (Alexander et al. 2009) is used for identifying and visualizing distinct populations within a species or group of closely related species. The ideal population size (k) is assigned a posteriori based on maximum likelihood estimations of individual ancestries.
 
 The **admixture.script** script (/Admixture/SCRIPTS) converts the vcf file to plink file using **vcftools**, then converts ped to bed files use **plink**, then runs the admixture analysis on K = 1–9, writing an output file (Admixture.CVerrors.txt) that will help determine the optimal K value. Additionally, the R script **admixture\_panel\_plot.R** plots all 9 barplots to a pdf file for visualization and is run from the admixture script.
 
 *Note:* ***Admixture*** *and* ***plink*** *need to be downloaded and executables copied into Admixture/DATA directory prior to running the scripts. Additionally, the* ***vcftools biocontainer*** *is used from* ***docker*** *to run part of the script. An absolute route for the vcftools biocontainer command is needed.*
 
 ### PCA plots
-Principal Component Analyses (PCAs) are another tool to detect genetic variation within a species/population. The R script **PCA\_script.R** (PCA/SCRIPTS) runs the [**SNPRelate**] (http://www.bioconductor.org/packages/release/bioc/html/SNPRelate.html) v1.16 package (Zheng et al. 2012) to calcuate principal components of the different clades, which are then graphed as a panel figure and saved to a pdf using **R (base)** (R Core Team 2018).
+Principal Component Analyses (PCAs) are another tool to detect genetic variation within a species/population. The R script **PCA\_script.R** (PCA/SCRIPTS) runs the [SNPRelate] (http://www.bioconductor.org/packages/release/bioc/html/SNPRelate.html) v1.16 package (Zheng et al. 2012) to calcuate principal components of the different clades, which are then graphed as a panel figure and saved to a pdf using **R (base)** (R Core Team 2018).
 
 *Note: The R package* ***SNPRelate*** *must be installed prior to running this script. There are installation commands at the beginning of the script if needed, just remove the '#s'*
 
 ### Phylogenetic Tree Reconstruction
-Relationships among individuals and clades can be determined by estimating a phylogenetic tree. The program [**RAxML**](https://github.com/stamatak/standard-RAxML) v8.2.12 (Stamatiakis 2014) was used to contruct a phylogenetic tree using Maximum Likelihood methods, with non-parametric bootstrapping to determine nodal support values.
+Relationships among individuals and clades can be determined by estimating a phylogenetic tree. The program [RAxML](https://github.com/stamatak/standard-RAxML) v8.2.12 (Stamatiakis 2014) was used to contruct a phylogenetic tree using Maximum Likelihood methods, with non-parametric bootstrapping to determine nodal support values.
 
 The original data from the paper (50missing.phy) contains a concatenated dataset of 2,435,662 basepairs from 93 individuals.
 Running a RAxML analysis on this full dataset would take days/weeks to on a cluster, and therefore, for the purpose of this project, I decided to run a RAxML analysis on a reduced dataset (50missing\_reduced.phy), including 11 of the 93 individuals (all 2,435,662 basepairs), representing the major lineages found in the original article. In addition, since no meta-data regarding locality was give, I make a mini meta-data table (Phylogenetics/DATA/**reduced_taxa.txt**) for the 11 individuals in the reduced dataset for visualization based off of the orignal publication.

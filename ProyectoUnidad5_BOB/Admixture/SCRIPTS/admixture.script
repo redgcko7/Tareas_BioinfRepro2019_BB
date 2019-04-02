@@ -43,10 +43,16 @@ do ./admixture --cv 80missingdata.singleSNP.bed $K | tee log${K}.out; done
 #
 # write CV errors to text file, lowest CV error is most likely K value
 #
-grep -h CV log*.out >> Admixture.CVerrors.txt
+grep -h CV log*.out | grep -oE '0.[0-9]*' >> Admixture.CVerrors.txt
 
 #
-# plot using R script (admixture_panel_plot.R):
+# graph CV Errors using R script CVErrors_graph.R, lowest CV error is most likely K value
+#
+Rscript ../SCRIPTS/CVErrors_graph.R
+mv CVerrors.pdf ../FIGURES
+
+#
+# graph admixture barplots in panel form using R script (admixture_panel_plot.R):
 #
 cd ..
 Rscript SCRIPTS/admixture_panel_plot.R
