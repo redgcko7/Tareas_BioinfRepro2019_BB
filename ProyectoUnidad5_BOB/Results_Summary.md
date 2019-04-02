@@ -6,8 +6,8 @@ ____________________
 ## Results
 The scripts included in this repository include loops, grep functions, biocontainers, four different population genetics/phylogenetics programs, R (base) graphics, and various R packages to perform three distinct analyses and produce four figures. These figures illuminate the genetic differentiation, structuring, and relationships between populations of Foothill Yellow-Legged Frogs in western North America. 
 
-##Admixture
-The results of the admixture analysis found **K=7** to be the most optimal population size within *Rana boylerii*, determined by the lowest Cross-Validation (CV) Error. This differs from the original publication ([McCartney-Melsted et al. 2018](https://www.nature.com/articles/s41437-018-0097-7.pdf?origin=ppub)), which utilized a different program (fastStructure) and found K = 4 as optimal. The graph of CV errors (Fig. 1) from my admixture analyses shows that there are minimal differences in the CV errors between K = 4, 5, 6 and 7, suggesting that there is no overwhelmingly best optimal population size and optimal K values may differ depending on which program is used for the analysis.
+## Admixture
+The results of the admixture analysis found **K=7** to be the most optimal population size within *Rana boylii*, determined by the lowest Cross-Validation (CV) Error. This differs from the original publication ([McCartney-Melsted et al. 2018](https://www.nature.com/articles/s41437-018-0097-7.pdf?origin=ppub)), which utilized a different program (fastStructure) and found K = 4 as optimal. The graph of CV errors (Fig. 1) from my admixture analyses shows that there are minimal differences in the CV errors between K = 4, 5, 6 and 7, suggesting that there is no overwhelmingly best optimal population size and optimal K values may differ depending on which program is used for the analysis.
 
 #### **Fig. 1:**
 
