@@ -20,7 +20,7 @@ mid.tree<-midpoint.root(tree)
 par(mar=c(5, 4, 8, 2), xpd=TRUE)
 
 # create pdf file to save tree to
-pdf("../FIGURES/RAxML_reduced_tree.pdf", width = 8.5, height = 11)
+png("../FIGURES/RAxML_reduced_tree.png", width = 7.5, height = 10.5, units = 'in', res = 300)
 
 # plot midpoint tree with tip labels, node support labels, scale bar, title, and legend
 plot(mid.tree, edge.width = 4, align.tip.label = T)
@@ -30,5 +30,5 @@ add.scale.bar()
 title("Major Clades within Foothill Yellow-Legged Frogs")
 legend(x = "bottom",title = "Regions",ncol = 5,legend = levels(colors$region), col = palette(),pch=15)
 
-# save the pdf file
+# save the png file
 dev.off()

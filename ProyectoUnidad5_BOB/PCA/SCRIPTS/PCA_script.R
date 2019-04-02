@@ -26,8 +26,8 @@ RV <- snpgdsPCA(genofile)
 pc.percent<-RV$varprop*100
 
 ##  plot PCAs in 2x2 panel
-# create pdf file in FIGURES folder
-pdf("FIGURES/PCA_panel.pdf")
+# create png file in FIGURES folder
+png("FIGURES/PCA_panel.png", width = 6.5, height = 9, units = 'in', res = 300)
 
 # specify 2x2 panel for a total of 4 PCAs
 par(mfrow=c(2,2))
@@ -50,7 +50,7 @@ plot(RV$eigenvect[,5], RV$eigenvect[,6], xlab=(paste0("PC 5: ", round(pc.percent
 plot(RV$eigenvect[,7], RV$eigenvect[,8], xlab=(paste0("PC 7: ", round(pc.percent,2)[7],"%")),
      ylab=(paste0("PC 8: ", round(pc.percent,2)[8],"%")), pch=19)
 
-# save graphs to pdf 'PCA_panel.pdf'
+# save graphs to png 'PCA_panel.png'
 dev.off()
 
 # close the file

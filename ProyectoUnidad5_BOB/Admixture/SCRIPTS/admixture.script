@@ -49,7 +49,7 @@ grep -h CV log*.out | grep -oE '0.[0-9]*' >> Admixture.CVerrors.txt
 # graph CV Errors using R script CVErrors_graph.R, lowest CV error is most likely K value
 #
 Rscript ../SCRIPTS/CVErrors_graph.R
-mv CVerrors.pdf ../FIGURES
+mv CVerrors.png ../FIGURES
 
 #
 # graph admixture barplots in panel form using R script (admixture_panel_plot.R):
