@@ -12,7 +12,7 @@ The results of the admixture analysis found **K=7** to be the most optimal popul
 
 #### **Fig. 1:**
 
-![CV Errors](./Admixture/FIGURES/CVErrors.png)
+![CV Errors](./Admixture/FIGURES/CVerrors.png)
 
 The admixture barplots for K = 1–9 allow for easy visualization of the population clustering. For my analysis, it would have been useful to have the meta-data provided for the location of these samples, in order to infer possible geographic clustering due to potential barriers. As seen from Fig. 1 above, K = 7 was found to be the most optimal population number, with K= 4-6 also showing low CV errors.
 
