@@ -15,7 +15,7 @@ data<-cbind(data, 1:9)
 png("CVerrors.png")
 
 # plot
-ggplot(data=data, aes(x=1:9, y=V1)) + geom_point() + ylim(.325,.425) + ylab("CV Error") + xlab("Populations (K)") + scale_x_continuous(breaks=seq(2,9,1)) + ggtitle("CV Errors of K Populations")+theme(plot.title = element_text(hjust = 0.5))
+ggplot(data=data, aes(x=1:9, y=V1)) +geom_line(col="blue")+geom_point() + ylim(.325,.425) + ylab("CV Error") + xlab("Populations (K)") + scale_x_continuous(breaks=seq(2,9,1)) + ggtitle("CV Errors of K Populations")+theme(plot.title = element_text(hjust = 0.5))
 
 # save graph to CVerrors.png
 dev.off()
