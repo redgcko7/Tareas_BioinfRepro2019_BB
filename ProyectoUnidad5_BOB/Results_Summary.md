@@ -32,7 +32,7 @@ The Maximum Likelihood phylogenetic estimation was performed in RAxML with 100 r
 
 #### **Fig. 4:**
 
-![Tree](./RAxML_reduced_tree.pdf)
+![Tree](./Phylogenetics/FIGURES/RAxML_reduced_tree.pdf)
 
 ## Conclusion
 Overall, my results largely reflect the results found in the original publication. The PCA plots (Fig. 3) were identical (albeit without geographic coloring in my PCA plots due to the lack of meta-data). The admixture plot found a different optimal K value (K = 7) than the original paper (K = 4), however the graph of CV Errors from the admixture analyses (Fig. 1) shows that other values of K, including K = 4, approach the optimal value. Regarding the phylogenetic tree, the differences in topology of the reduced dataset and the full dataset may be explained by incomplete taxon sampling or by differences in midpoint rooting due to a different number of taxa. Regardless, the topology largely reflects the topology found in the original paper, reflecting geographic structuring in the Foothills Yellow-Legged Frogs.
